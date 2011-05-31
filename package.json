@@ -1,0 +1,28 @@
+{
+  "name": "random",
+  "version": "0.1.0",
+  "description": "A Random.org client",
+  "keyword": [
+    "random",
+    "client",
+    "random.org",
+    "lottery"
+  ],
+  "author": "Rodger Combs <rodger.combs@gmail.com> (http://combsconnections.tk/)",
+  "contributors": [],
+  "main": "./main",
+  "directories": [
+    "./lib"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/11rcombs/node-random.git"
+  },
+  "scripts": {},
+  "config": {},
+  "engines": {
+    "node": ">=0.4.8"
+  },
+  "dependencies": {},
+  "devDependencies": {}
+}
