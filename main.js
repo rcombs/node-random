@@ -1,6 +1,9 @@
 #!/usr/bin/env node
 http  = require("http");
 https = require("https");
+function globalErrorCallback(type,code,string){
+    console.error("RANDOM.ORG Error: Type: "+type+", Status Code: "+code+", Response Data: "+string);
+};
 function formatStrings(strings){
     return strings.toString().trim().split("\n");
 }
@@ -36,7 +39,7 @@ exports.generateIntegers = function(callback,options,errorCallback){
 	   callback = console.log;
 	}
 	if(!errorCallback){
-	   errorCallback = function(type,code,string){console.log("RANDOM.ORG Error: Type: "+type+", Status Code: "+code+", Response Data: "+string);};
+	   errorCallback = globalErrorCallback;
 	}
 	var scheme;
 	var opts = getOptions(options,defaults);
@@ -78,7 +81,7 @@ exports.generateSequence = function(callback,options,errorCallback){
 	   callback = console.log;
 	}
 	if(!errorCallback){
-	   errorCallback = function(type,code,string){console.log("RANDOM.ORG Error: Type: "+type+", Status Code: "+code+", Response Data: "+string);};
+	   errorCallback = globalErrorCallback;
 	}
 	var scheme;
 	var opts = getOptions(options,defaults);
@@ -115,14 +118,14 @@ exports.generateStrings = function(callback,options,errorCallback){
         digits: true,
 		upper: true,
 		lower: true,
-		unique: true,
+		unique: false,
 		rnd: "new"
 	};
 	if(!callback){
 	   callback = console.log;
 	}
 	if(!errorCallback){
-	   errorCallback = function(type,code,string){console.log("RANDOM.ORG Error: Type: "+type+", Status Code: "+code+", Response Data: "+string);};
+	   errorCallback = globalErrorCallback;
 	}
 	var scheme;
 	var opts = getOptions(options,defaults);
@@ -160,7 +163,7 @@ exports.checkQuota = function(callback,options,errorCallback){
 	   callback = console.log;
 	}
 	if(!errorCallback){
-	   errorCallback = function(type,code,string){console.log("RANDOM.ORG Error: Type: "+type+", Status Code: "+code+", Response Data: "+string);};
+	   errorCallback = globalErrorCallback;
 	}
 	var scheme;
 	var opts = getOptions(options,defaults);
@@ -172,7 +175,7 @@ exports.checkQuota = function(callback,options,errorCallback){
 	var callbackFunction = function(res){
 		res.on("data",function(data){
 			if(res.statusCode == 200){
-				callback(formatStrings(data));
+				callback(parseInt(data));
 			}else if(res.statusCode == 503){
 				errorCallback("ServerError",503,data);
 			}else{
