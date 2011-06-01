@@ -1,6 +1,7 @@
 #!/usr/bin/env node
 http  = require("http");
 https = require("https");
+const VERSION = "1.0.0beta-1"
 function globalErrorCallback(type,code,string){
     console.error("RANDOM.ORG Error: Type: "+type+", Status Code: "+code+", Response Data: "+string);
 };
@@ -64,7 +65,9 @@ exports.generateIntegers = function(callback,options,errorCallback){
 		port: opts.secure?443:80,
 		method: "GET",
 		path: "/integers/?format=plain&num="+opts.num+"&min="+opts.min+"&max="+opts.max+"&col="+opts.col+"&base="+opts.base+"&rnd="+opts.rnd,
-		headers: {}
+		headers: {
+			"User-Agent": "Random.org client for Node.js by Rodger Combs <rodger.combs@gmail.com>, version "+VERSION
+		}
 	},callbackFunction);
 	req.end();
 };
@@ -106,7 +109,9 @@ exports.generateSequence = function(callback,options,errorCallback){
 		port: opts.secure?443:80,
 		method: "GET",
 		path: "/sequences/?format=plain&min="+opts.min+"&max="+opts.max+"&col="+opts.col+"&base="+opts.base+"&rnd="+opts.rnd,
-		headers: {}
+		headers: {
+			"User-Agent": "Random.org client for Node.js by Rodger Combs <rodger.combs@gmail.com>, version "+VERSION
+		}
 	},callbackFunction);
 	req.end();
 };
@@ -150,7 +155,9 @@ exports.generateStrings = function(callback,options,errorCallback){
 		port: opts.secure?443:80,
 		method: "GET",
 		path: "/strings/?format=plain&num="+opts.num+"&len="+opts.length+"&digits="+(opts.digits?"on":"off")+"&upperalpha="+(opts.upper?"on":"off")+"&loweralpha="+(opts.lower?"on":"off")+"&unique="+(opts.unique?"on":"off")+"&rnd="+opts.rnd,
-		headers: {}
+		headers: {
+			"User-Agent": "Random.org client for Node.js by Rodger Combs <rodger.combs@gmail.com>, version "+VERSION
+		}
 	},callbackFunction);
 	req.end();
 };
@@ -188,7 +195,9 @@ exports.checkQuota = function(callback,options,errorCallback){
 		port: opts.secure?443:80,
 		method: "GET",
 		path: "/quota/?format=plain"+(opts.ip?"&ip="+opts.ip:""),
-		headers: {}
+		headers: {
+			"User-Agent": "Random.org client for Node.js by Rodger Combs <rodger.combs@gmail.com>, version "+VERSION
+		}
 	},callbackFunction);
 	req.end();
 };

@@ -1,12 +1,13 @@
 {
   "name": "random",
-  "version": "1.0.0beta",
+  "version": "1.0.0beta-1",
   "description": "A Random.org client",
   "keyword": [
     "random",
     "client",
     "random.org",
-    "lottery"
+    "lottery",
+    "raffle"
   ],
   "author": "Rodger Combs <rodger.combs@gmail.com> (http://combsconnections.tk/)",
   "contributors": [],
