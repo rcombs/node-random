@@ -24,7 +24,7 @@ The `generateIntegers` function asynchronously retrieves a customizable table of
     }
     var options = {};
     function errorCallback(type,code,string){
-	console.log("RANDOM.ORG Error: Type: "+type+", Status Code: "+code+", Response Data: "+string);
+        console.log("RANDOM.ORG Error: Type: "+type+", Status Code: "+code+", Response Data: "+string);
     }
     random.generateIntegers(randomCallback,options,errorCallback);
 
@@ -68,7 +68,7 @@ The `generateSequence` function asynchronously retrieves a customizable table co
     }
     var options = {};
     function errorCallback(type,code,string){
-	console.log("RANDOM.ORG Error: Type: "+type+", Status Code: "+code+", Response Data: "+string);
+        console.log("RANDOM.ORG Error: Type: "+type+", Status Code: "+code+", Response Data: "+string);
     }
     random.generateSequence(randomCallback,options,errorCallback);
 
@@ -109,7 +109,7 @@ The `generateStrings` function asynchronously retrieves an array of customizable
     }
     var options = {};
     function errorCallback(type,code,string){
-	console.log("RANDOM.ORG Error: Type: "+type+", Status Code: "+code+", Response Data: "+string);
+        console.log("RANDOM.ORG Error: Type: "+type+", Status Code: "+code+", Response Data: "+string);
     }
     random.generateStrings(randomCallback,options,errorCallback);
 
@@ -154,7 +154,7 @@ The `checkQuota` function asynchronously checks to see how many bits a given IP 
     }
     var options = {};
     function errorCallback(type,code,string){
-	console.log("RANDOM.ORG Error: Type: "+type+", Status Code: "+code+", Response Data: "+string);
+        console.log("RANDOM.ORG Error: Type: "+type+", Status Code: "+code+", Response Data: "+string);
     }
     random.checkQuota(quotaCallback,options,errorCallback);
 
