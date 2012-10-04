@@ -119,7 +119,7 @@ exports.generateStrings = function(callback,options,errorCallback){
 	var defaults = {
 		secure: false,
         num: 1,
-        length: 10,
+        len: 10,
         digits: true,
 		upper: true,
 		lower: true,
@@ -154,7 +154,7 @@ exports.generateStrings = function(callback,options,errorCallback){
 		host: "www.random.org",
 		port: opts.secure?443:80,
 		method: "GET",
-		path: "/strings/?format=plain&num="+opts.num+"&len="+opts.length+"&digits="+(opts.digits?"on":"off")+"&upperalpha="+(opts.upper?"on":"off")+"&loweralpha="+(opts.lower?"on":"off")+"&unique="+(opts.unique?"on":"off")+"&rnd="+opts.rnd,
+		path: "/strings/?format=plain&num="+opts.num+"&len="+opts.len+"&digits="+(opts.digits?"on":"off")+"&upperalpha="+(opts.upper?"on":"off")+"&loweralpha="+(opts.lower?"on":"off")+"&unique="+(opts.unique?"on":"off")+"&rnd="+opts.rnd,
 		headers: {
 			"User-Agent": "Random.org client for Node.js by Rodger Combs <rodger.combs@gmail.com>, version "+VERSION
 		}
