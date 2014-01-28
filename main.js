@@ -26,7 +26,7 @@ function getOptions(options,defaults){
 	}
 	return options;
 };
-exports.generateIntegers = function(callback,options,errorCallback){
+exports.generateIntegers = function(options,callback,errorCallback){
 	var defaults = {
 		secure: false,
 		num: 1,
@@ -71,7 +71,7 @@ exports.generateIntegers = function(callback,options,errorCallback){
 	},callbackFunction);
 	req.end();
 };
-exports.generateSequence = function(callback,options,errorCallback){
+exports.generateSequence = function(options,callback,errorCallback){
 	var defaults = {
 		secure: false,
 		min: 0,
@@ -115,7 +115,7 @@ exports.generateSequence = function(callback,options,errorCallback){
 	},callbackFunction);
 	req.end();
 };
-exports.generateStrings = function(callback,options,errorCallback){
+exports.generateStrings = function(options,callback,errorCallback){
 	var defaults = {
 		secure: false,
         num: 1,
@@ -161,7 +161,7 @@ exports.generateStrings = function(callback,options,errorCallback){
 	},callbackFunction);
 	req.end();
 };
-exports.checkQuota = function(callback,options,errorCallback){
+exports.checkQuota = function(options,callback,errorCallback){
 	var defaults = {
 		secure: false,
         ip: false
